@@ -1,0 +1,1053 @@
+/* This is the file which is responsible for all the styling of the page all the colors, font Size etc */
+
+/* This "*" is called the universal selector it selects everything in the page and setting all the margin and padding to 0... The CSS box-sizing property allows us to include the padding and border
+in an element's total width and height */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  position: relative;
+  scroll-padding-top: 8em;
+}
+
+/* Here we are setting the background color of the body to white and font family to Rubik font */
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #fff;
+}
+
+/* Remove underline from all the links */
+a {
+  text-decoration: none;
+}
+
+a:focus-within,
+svg:focus-within,
+input:focus-within,
+button:focus-within {
+  outline: 7px dotted red !important;
+}
+
+/* The cursor will change itself to pointer when ever it is upon any button */
+
+button {
+  cursor: pointer;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+/* Home Page CSS */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+}
+
+.search-bar-div {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.search-bar-icon {
+  width: 1.575rem;
+  position: absolute;
+  z-index: 11111;
+  padding: 0.853rem 0 0.413rem 0.6rem;
+}
+
+.microphone-icon {
+  width: 1.3rem;
+  position: absolute;
+  right: 3.125rem;
+  top: 0.7rem;
+  z-index: 11111;
+  transform: rotate(-45deg);
+}
+
+#search-bar {
+  padding: 0.7em 1em 0.7em 2.5em;
+  width: 90%;
+  font-family: "Rubik";
+  font-size: 1rem;
+  border: 0.2em solid #000;
+}
+
+.cart-div {
+  text-align: end;
+}
+
+.cart-icon {
+  width: 3rem;
+  cursor: pointer;
+}
+
+.button-div {
+  padding: 1em 3em;
+}
+
+.home-page-btn + .home-page-btn {
+  margin-left: 1em;
+}
+
+.nav-button-div {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #000;
+  justify-content: space-between;
+}
+
+.navbar-div {
+  border: 2px solid #fff;
+  padding: 0.6em 0.5em;
+  background-color: #004a99;
+  color: #fff;
+  border-radius: 0.45rem;
+  margin-right: 3em;
+}
+
+.navbar-div-item {
+  border-right: 2px solid #fff;
+  color: #fff;
+  padding: 0.6em 1.5em;
+}
+
+.navbar-div-item:last-child {
+  border-right: none;
+}
+
+.deal-heading {
+  padding: 1em 0 0 2em;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.all-category-div-slider,
+.deals-slider {
+  display: flex;
+  padding: 2em 2em;
+  justify-content: space-between;
+}
+
+.trending-deal-slider {
+  padding: 2em 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.left-arrow,
+.right-arrow {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
+.category-img-div {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.category-img-div p {
+  padding: 0.5em 0;
+}
+
+.category-img-div img {
+  width: 14rem;
+}
+
+.trending-img-div img {
+  width: 100%;
+}
+
+.trending-img-div p {
+  max-width: 100%;
+}
+
+.overlay-div {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  z-index: 1111;
+  display: none;
+}
+
+.cart-items-div {
+  position: fixed;
+  left: 0;
+  background-color: #fff;
+  z-index: 11111111;
+  width: 80%;
+  margin: 0 auto;
+  right: 0;
+  top: 4rem;
+  padding: 1em;
+  max-height: 80vh;
+  overflow-y: scroll;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.close-cart {
+  position: absolute;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.cart-heading {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.remove-cart-item {
+  cursor: pointer;
+}
+
+.cart-btn {
+  margin-bottom: 1em !important;
+}
+
+.empty-cart-text {
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+
+.cart-item-div {
+  display: flex;
+  border: 1px solid;
+  align-items: center;
+  padding-right: 1em;
+  margin: 1em 0;
+}
+
+.cart-item-img {
+  width: 4rem;
+}
+
+.cart-item-name {
+  margin-left: 1em;
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 10rem;
+}
+
+.cart-item-price {
+  text-align: center;
+  flex: 1;
+}
+
+.zoom {
+  transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  overflow: scroll;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* Login Page CSS*/
+
+/* Flex moves all the items in one row next to each other...Justify content spread the content in the horizontal direction, and align items make the content vertically center */
+.logo-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 2em 2.5em;
+}
+
+/* Giving logo width */
+.logo-img {
+  width: 18.75rem;
+}
+
+.form-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6em;
+}
+
+.login-form {
+  background-color: #000;
+  width: 28rem;
+  padding: 1.5em 1.5em;
+  border-radius: 0.625em;
+  color: #fff;
+}
+
+.login-heading {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.form-field-label {
+  display: block;
+  margin: 1em 0;
+  font-size: 0.9rem;
+}
+
+.form-field {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  border: 0.063rem solid #000;
+  font-family: "Rubik", sans-serif;
+}
+
+/* When we click on something and hold the click it is basically focus  */
+
+.form-field:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #005500;
+  outline: 0;
+}
+
+.forgot-password-div {
+  text-align: end;
+}
+
+.forget-password {
+  display: inline-block;
+  margin-top: 0.9em;
+  text-align: end;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.submit-btn,
+.home-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1.5em;
+  padding: 0.6rem 0.75rem;
+  font-family: "Rubik", sans-serif;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #004a99;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.home-btn {
+  display: inline-block;
+  width: auto;
+  padding: 0.6em 2em;
+  margin: 0;
+}
+
+/* When we move our cursor to some button how will the button interact is this hover thing, here we are changing it background and border color */
+
+.submit-btn:hover,
+.home-btn:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.submit-btn:focus,
+.home-btn:focus {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+  outline: 0;
+}
+
+/* Here we are hidding the element, it is actually on the site but the user can't see it nor click it */
+
+.hidden-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.signup-link {
+  text-decoration: underline;
+}
+
+.underline {
+  border-bottom: 7px dotted red;
+}
+
+/* Accessibility Panel CSS */
+
+/*  */
+
+.accessibility-panel-div {
+  position: fixed;
+  background-color: #0069d9;
+  padding: 0.5em;
+  top: 15em;
+  right: 2em;
+  border-radius: 50%;
+  z-index: 1111111;
+  display: flex;
+}
+
+.fa-universal-access {
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 5rem;
+  padding: 0.5em;
+  fill: #0069d9;
+}
+
+.fa-universal-access:hover {
+  fill: #005500;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.fa-universal-access:focus {
+  fill: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+  box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 100%);
+  border-radius: 50%;
+  outline: 0;
+}
+
+.accessibility-panel {
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  top: -8em;
+  right: 2em;
+  text-align: left;
+  width: 25rem;
+  padding: 1.5em;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 35%);
+  border-radius: 0.513rem;
+  display: none;
+  max-height: 29.375rem;
+  overflow-y: auto;
+}
+
+#cross-btn {
+  text-align: end;
+  margin-bottom: 1em;
+}
+
+.fa-square-xmark {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.adjustment-heading {
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.feature-div {
+  display: flex;
+  justify-content: space-between;
+  /* position: relative; */
+}
+
+.feature-div + .feature-div {
+  margin: 1.5em 0 2em;
+  padding-right: 0.3em;
+}
+
+.feature-div i {
+  font-size: 1.5rem;
+}
+
+.reset-btn-div {
+  text-align: end;
+  margin-top: 2em;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.125rem;
+  height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  height: 1.425rem;
+  width: 3rem;
+  border: 0.125rem solid #000;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: 0.125rem solid #000;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625rem;
+  width: 1.625rem;
+  left: -0.188rem;
+  bottom: -0.188rem;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border: 0.125rem solid #000;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 0.063rem #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.625rem);
+  -ms-transform: translateX(1.625rem);
+  transform: translateX(1.625rem);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 2.125rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Footer CSS */
+
+.footer-div {
+  background-color: #004a99;
+  width: 100%;
+  text-align: end;
+  padding: 1.5em 4em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-link {
+  color: #fff;
+}
+
+.connect-with-us {
+  vertical-align: super;
+  margin-right: 1.5em;
+}
+
+.footer-link + .footer-link {
+  margin-left: 1.5em;
+}
+
+.social-icon-link {
+  color: #fff;
+  font-size: 2em;
+}
+
+.social-icon-link + .social-icon-link {
+  margin-left: 0.7em;
+}
+
+/* Help Support Page */
+
+.help-container {
+  background-color: #111a85;
+  padding: 3em 0;
+}
+
+.help-container h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1em;
+  font-size: 2.5rem;
+}
+
+.search-bar {
+  border: 1px solid !important;
+  font-size: 1.1rem !important;
+}
+
+.help-page__search-bar-icon {
+  width: 2rem;
+  padding: 0.753rem 0 0 0.8rem;
+  color: #2196f3;
+}
+
+.search-bar::placeholder {
+  font-style: italic;
+}
+
+.page-grid-section {
+  display: grid;
+  background-color: #caecfb;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 4em 0;
+}
+
+.box {
+  padding: 2em;
+  border-right: 3px solid;
+}
+
+.box:last-child {
+  border: none;
+}
+
+.box1 {
+  padding-right: 2em;
+}
+
+.box1 h3 {
+  font-weight: 500;
+  line-height: 1.5;
+  width: 90%;
+  margin-bottom: 1em;
+}
+
+.box-links-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.help-page-btn {
+  display: block;
+  text-align: center;
+}
+
+.register-now-div {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+  text-align: right;
+}
+
+.register-now-div a {
+  margin-left: 0.5em;
+  font-weight: 500;
+  color: #004a99;
+  font-size: 1rem;
+}
+
+.register-now-div svg {
+  margin-left: 0.5em;
+}
+
+.link-div a {
+  display: block;
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.link-div small {
+  color: rgb(27, 27, 27);
+  font-size: 0.831rem;
+}
+
+.box-links-div + .box-links-div {
+  margin-top: 3.5em;
+}
+
+/* Here are the media queries that are responsible for the responsiveness of the web page...Min width indicates that activate this media query when the width is minimum 1600px or greater then 1600px */
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+/* Max width is the opposite that activate this media query, any width that is less than the max-width specified, all of the CSS within the query will take effect. */
+
+@media (max-width: 1300px) {
+  .deals-slider {
+    min-width: 1320px;
+  }
+
+  .today-deals-div {
+    overflow-x: scroll;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 1125px) {
+  .nav-button-div {
+    flex-direction: column;
+  }
+
+  .navbar-div {
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+
+  .home-page-logo {
+    width: 16.75rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .register-now-div {
+    display: block;
+    text-align: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cart-div {
+    text-align: center;
+    margin: 1.5em 0;
+  }
+
+  .home-page-logo {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .page-grid-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .box2 {
+    border: none;
+  }
+
+  .box3 {
+    border-right: 3px solid !important;
+  }
+
+  .register-now-div {
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .trending-deal-slider {
+    grid-template-columns: 1fr 1fr;
+    padding: 2em;
+  }
+
+  .cart-items-div {
+    width: 90%;
+  }
+
+  .all-cart-items-div {
+    overflow-x: scroll;
+  }
+
+  .cart-item-div {
+    width: 620px;
+  }
+
+  .empty-cart-btn {
+    margin-top: 1em;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navbar-div-item {
+    border: none;
+    display: inline-block;
+  }
+
+  .register-now-div {
+    display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  .logo-div {
+    justify-content: space-between;
+  }
+
+  .home-btn {
+    display: none;
+  }
+
+  .home-page-btn,
+  .checkout-btn,
+  .empty-cart-btn {
+    display: inline-block;
+  }
+
+  .hidden-btn {
+    display: block !important;
+  }
+
+  .logo-img {
+    width: 15.75rem;
+  }
+
+  #reset-btn {
+    display: inline-block;
+  }
+
+  .accessibility-panel-div {
+    top: -46.3em;
+    right: 1.5em;
+  }
+
+  .fa-universal-access {
+    width: 4rem;
+  }
+
+  .accessibility-panel {
+    right: 0;
+    top: 0;
+  }
+
+  .footer-div {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-link {
+    display: block;
+  }
+
+  .footer-link + .footer-link {
+    margin: 1.5em 0;
+  }
+
+  .connect-with-us {
+    vertical-align: super;
+    margin-right: 0em;
+    margin-bottom: 1.5em;
+  }
+
+  .navbar-div {
+    width: 90%;
+  }
+
+  .home-page-panel-div {
+    top: 1em;
+    position: fixed;
+  }
+
+  .page-grid-section {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    border: none !important;
+  }
+
+  .box2,
+  .box3 {
+    border-top: 3px solid !important;
+  }
+
+  .register-now-div {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .trending-deal-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-button-div {
+    position: relative;
+  }
+}
+
+@media (max-width: 520px) {
+  .login-form {
+    width: 90%;
+  }
+
+  .logo-div {
+    margin: 1em 1em 2.5em;
+  }
+
+  .support-btn {
+    margin: 1em 0 !important;
+  }
+}
+
+@media (max-width: 460px) {
+  .accessibility-panel {
+    padding: 1.5em 1em;
+    width: 21rem;
+  }
+
+  .feature-div i {
+    font-size: 1.3rem;
+  }
+
+  .adjustment-heading {
+    font-size: 1rem;
+  }
+
+  .fa-universal-access {
+    width: 3rem;
+  }
+
+  .logo-img {
+    width: 14.45rem;
+  }
+
+  .accessibility-panel {
+    right: -10px;
+  }
+
+  .header {
+    padding: 1em;
+  }
+
+  .microphone-icon {
+    right: 2.125rem;
+  }
+}
+
+#login-form {
+  display: none;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.text_magnify {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  line-height: 1.2;
+  padding: 8px 17px;
+  max-width: 500px;
+  font-size: 22px;
+  border-radius: 5px;
+  color: #fff;
+  z-index: 1111111111;
+  pointer-events: none;
+  user-select: none;
+  top: 100px;
+  left: 10em;
+  opacity: 0;
+  display: none;
+}
+
+.content {
+  display: none;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.black-bg {
+  background-color: #000;
+}
+
+.up-arrow,
+.down-arrow {
+  width: 2em;
+  cursor: pointer;
+}
+
+.last-feature-div {
+  align-items: center;
+  padding-left: 0.5em;
+}
+
+.adjust-font-span {
+  margin-left: 1.5em;
+}
+
+.down-arrow {
+  transform: rotate(-90deg);
+}
+
+.up-arrow {
+  transform: rotate(90deg);
+}
+
+.switch small {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.white-color {
+  color: #fff !important;
+}
+
+.cart-div {
+  position: relative;
+}
+
+.basket {
+  position: absolute;
+  top: 20px;
+  left: 130px;
+  opacity: 0;
+}
+
+
+#help-page__home-btn{
+  background-color: #000;
+  display: inline-block;
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
