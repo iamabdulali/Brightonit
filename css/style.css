@@ -686,6 +686,49 @@ input:checked + .slider:before {
   margin-top: 3.5em;
 }
 
+.work-in-progress-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.work-in-progress-div h1{
+  margin-bottom: 1em;
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.payment-methods-div{
+  display: flex;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.payment-method-icon{
+  width: 40px;
+  height: 40px;
+  margin-left: 1em;
+}
+
 /* Here are the media queries that are responsible for the responsiveness of the web page...Min width indicates that activate this media query when the width is minimum 1600px or greater then 1600px */
 
 @media (min-width: 1600px) {

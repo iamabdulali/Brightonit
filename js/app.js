@@ -437,7 +437,6 @@ function getRandomNumberBetween(min, max) {
 
 function addItem(selector, eventType) {
   selector.addEventListener(eventType, (event) => {
-    alert("Item Added");
     emptyCart.style.display = "none";
     itemName = event.target.previousElementSibling.innerText;
     imgSrc = event.target.previousElementSibling.previousElementSibling.src;
@@ -472,6 +471,10 @@ function addItem(selector, eventType) {
 
 cartBtn.forEach((cart) => {
   addItem(cart, "click");
+  cart.addEventListener('click', () =>{
+    overlayDiv.style.display = "block";
+    cartItemsDiv.style.display = "block";
+  })
 });
 
 function gettingElements(params) {
@@ -681,6 +684,13 @@ function speakThis(message) {
       "_self"
     );
     const finalText = "Opening Help and Support Page";
+    speech.text = finalText;
+  } else if (message.includes("payment") || message.includes("pay")) {
+    window.open(
+      "https://brightonit.netlify.app/payment.html",
+      "_self"
+    );
+    const finalText = "Opening Payment Page";
     speech.text = finalText;
   }
 
