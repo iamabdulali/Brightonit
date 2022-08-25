@@ -447,7 +447,7 @@ function addItem(selector, eventType) {
              alt="cart-item">
          <p class="cart-item-name">${itemName}</p>
          <p class="cart-item-price">$${getRandomNumberBetween(100, 400)}</p>
-         <img class = "remove-cart-item" tabindex= '0' title="Remove Item" src = "../assets/cross-btn.png" >             
+         <img class = "remove-cart-item" tabindex= '0' title="Remove Item" src = "./assets/cross-btn.png" >             
      </div>`;
 
     allCartItems.insertAdjacentHTML("afterbegin", cartHtml);
@@ -602,7 +602,8 @@ function speakThis(message) {
     panel.style.display = "none";
     const finalText = "Closing Panel";
     speech.text = finalText;
-  } else if (message.includes("check eye") || message.includes("true")) {
+  } else if (message.includes("vision") || message.includes("true")) {
+    panel.style.display = "block";
     eyeCheckbox.checked = true;
     eyeCheckboxFun("focus");
     eyeCheckbox.focus();
@@ -610,7 +611,7 @@ function speakThis(message) {
     const finalText = "Vision Impaired Profile is Now in Working";
 
     speech.text = finalText;
-  } else if (message.includes("uncheck eye") || message.includes("ok")) {
+  } else if (message.includes("blind") || message.includes("ok")) {
     eyeCheckbox.checked = false;
     eyeCheckboxFun("focus");
     eyeCheckbox.focus();
@@ -618,7 +619,8 @@ function speakThis(message) {
     const finalText = "Turning off Vision Impaired Profile";
 
     speech.text = finalText;
-  } else if (message.includes("magnify") || message.includes("hello")) {
+  } else if (message.includes("large") || message.includes("hello")) {
+    panel.style.display = "block";
     magnifyCheckbox.checked = true;
     magnifyTextFun("focus");
     magnifyCheckbox.focus();
@@ -626,7 +628,7 @@ function speakThis(message) {
     const finalText = "Magnify Text is Now in Working";
 
     speech.text = finalText;
-  } else if (message.includes("uncheck text") || message.includes("not ok")) {
+  } else if (message.includes("normal") || message.includes("not ok")) {
     magnifyCheckbox.checked = false;
     magnifyTextFun("focus");
     magnifyCheckbox.focus();
@@ -640,11 +642,30 @@ function speakThis(message) {
     const finalText = "Reseting Page";
 
     speech.text = finalText;
+  } else if (message.includes("increase")) {
+    panel.style.display = "block";
+    toIncreaseTextSize();
+
+    const finalText = "Font Size Increased";
+
+    speech.text = finalText;
+  } else if (message.includes("decrease")) {
+    panel.style.display = "block";
+    toDecreaseTextSize();
+    const finalText = "Font Size decreased";
+
+    speech.text = finalText;
   } else if (message.includes("listen")) {
     recognition.start();
-  } else if (message.includes("login") || message.includes("sign in")) {
+  } else if (message.includes("register") || message.includes("login")) {
     window.open("https://brightonit.netlify.app/log-in.html", "_self");
     const finalText = "Opening Page";
+    speech.text = finalText;
+  } else if (message.includes("authenticate")) {
+    loginForm.classList.add("show");
+    signUp.classList.add("hide");
+    document.title = "Log In";
+    const finalText = "Opening login Page";
     speech.text = finalText;
   } else if (
     message.includes("index") ||
