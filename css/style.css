@@ -686,13 +686,6 @@ input:checked + .slider:before {
   margin-top: 3.5em;
 }
 
-.work-in-progress-div{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .work-in-progress-div h1{
   margin-bottom: 1em;
 }
@@ -783,6 +776,10 @@ input:checked + .slider:before {
   color: white;
   font-family: "Rubik";
   font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Here are the media queries that are responsible for the responsiveness of the web page...Min width indicates that activate this media query when the width is minimum 1600px or greater then 1600px */
