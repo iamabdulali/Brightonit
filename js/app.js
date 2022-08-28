@@ -482,15 +482,19 @@ cartBtn.forEach((cart) => {
 const itemNotFound = document.querySelector("#not-found");
 const trendingImgDiv = document.querySelectorAll(".trending-img-div");
 var trendingImgDivHide;
+
 function gettingElements(params) {
+
+  // Here we are comparing the total items with the items that have a class of hide if there length is same then it means that all the items are hidden so we can show our message
+
   setTimeout(() => {
     trendingImgDivHide = document.querySelectorAll(".hide");
     if (trendingImgDiv.length === trendingImgDivHide.length) {
-      itemNotFound.style.display = "flex";
+      window.location.href = "/search-algorithm.html"
     }
-    else{
-      itemNotFound.style.display = 'none'
-    }
+    // else{
+    //   itemNotFound.style.display = 'none'
+    // }
   }, 10);
 
   //  Getting all the items name
