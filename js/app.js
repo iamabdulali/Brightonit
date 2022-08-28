@@ -415,6 +415,10 @@ if (openCartBtn && closeCartBtn && overlayDiv && emptyCartBtn != null) {
   // Delete Every Item from the cart
   emptyCartBtn.addEventListener("click", () => {
     emptyCartBtn.textContent = "Ok"
+    if(emptyCartBtn.textContent == "Ok"){
+      cartItemsDiv.style.display = "none";
+      overlayDiv.style.display = "none";
+    }
     paynowBtn.style.display = 'none'
     document.querySelectorAll(".cart-item-div").forEach((cartItem) => {
       cartItem.style.display = "none";
@@ -444,6 +448,7 @@ function addItem(selector, eventType) {
   selector.addEventListener(eventType, (event) => {
     paynowBtn.style.display = 'inline-block'
     emptyCartBtn.textContent = "Empty Cart"
+    emptyCartBtn.setAttribute("title", "Empty Cart")
     emptyCart.style.display = "none";
     itemName = event.target.previousElementSibling.innerText;
     imgSrc = event.target.previousElementSibling.previousElementSibling.src;
