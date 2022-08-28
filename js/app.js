@@ -370,6 +370,7 @@ const overlayDiv = document.querySelector(".overlay-div");
 const openCartBtn = document.querySelector(".cart-icon");
 const allCartItems = document.querySelector(".all-cart-items-div");
 const searchBar = document.querySelector("#search-bar");
+const paynowBtn = document.querySelector(".paynow-btn")
 // const vaBox = document.querySelectorAll(".va-box");
 
 var itemName;
@@ -413,6 +414,7 @@ if (openCartBtn && closeCartBtn && overlayDiv && emptyCartBtn != null) {
 
   // Delete Every Item from the cart
   emptyCartBtn.addEventListener("click", () => {
+    paynowBtn.style.display = 'none'
     document.querySelectorAll(".cart-item-div").forEach((cartItem) => {
       cartItem.style.display = "none";
     });
@@ -439,6 +441,7 @@ function getRandomNumberBetween(min, max) {
 
 function addItem(selector, eventType) {
   selector.addEventListener(eventType, (event) => {
+    paynowBtn.style.display = 'inline-block'
     emptyCart.style.display = "none";
     itemName = event.target.previousElementSibling.innerText;
     imgSrc = event.target.previousElementSibling.previousElementSibling.src;

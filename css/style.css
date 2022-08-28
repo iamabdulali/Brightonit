@@ -771,6 +771,10 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.paynow-btn{
+  display: none;
+}
+
 /* Here are the media queries that are responsible for the responsiveness of the web page...Min width indicates that activate this media query when the width is minimum 1600px or greater then 1600px */
 
 @media (min-width: 1600px) {
