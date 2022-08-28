@@ -154,6 +154,7 @@ const helpContainerHeading = document.querySelector(".help-container h1");
 // Same thing as the above checkbox...In case of checkbox being checked we are scaling the website and if the checkbox is unchecked we are changing it's setting to default...
 
 function eyeCheckboxFun(eventType) {
+  if(eyeCheckbox!= null){
   eyeCheckbox.addEventListener(eventType, (event) => {
     if (event.currentTarget.checked) {
       htmlPage.classList.add("zoom");
@@ -250,6 +251,7 @@ function eyeCheckboxFun(eventType) {
 
     return "eye";
   });
+}
 }
 
 eyeCheckboxFun("change");
@@ -471,13 +473,26 @@ function addItem(selector, eventType) {
 
 cartBtn.forEach((cart) => {
   addItem(cart, "click");
-  cart.addEventListener('click', () =>{
+  cart.addEventListener("click", () => {
     overlayDiv.style.display = "block";
     cartItemsDiv.style.display = "block";
-  })
+  });
 });
 
+const itemNotFound = document.querySelector("#not-found");
+const trendingImgDiv = document.querySelectorAll(".trending-img-div");
+var trendingImgDivHide;
 function gettingElements(params) {
+  setTimeout(() => {
+    trendingImgDivHide = document.querySelectorAll(".hide");
+    if (trendingImgDiv.length === trendingImgDivHide.length) {
+      itemNotFound.style.display = "flex";
+    }
+    else{
+      itemNotFound.style.display = 'none'
+    }
+  }, 10);
+
   //  Getting all the items name
   const itemsTitle = document.querySelectorAll(".trending-img-div p");
 
@@ -488,11 +503,10 @@ function gettingElements(params) {
 
     //  If matches then show that Item
     if (title.indexOf(params) > -1) {
-      parent.style.display = "";
-
+      parent.classList.remove("hide");
       //  Else Hide that Item
     } else {
-      parent.style.display = "none";
+      parent.classList.add("hide");
     }
   });
 }
@@ -686,10 +700,7 @@ function speakThis(message) {
     const finalText = "Opening Help and Support Page";
     speech.text = finalText;
   } else if (message.includes("payment") || message.includes("pay")) {
-    window.open(
-      "https://brightonit.netlify.app/payment.html",
-      "_self"
-    );
+    window.open("https://brightonit.netlify.app/payment.html", "_self");
     const finalText = "Opening Payment Page";
     speech.text = finalText;
   }
@@ -845,7 +856,7 @@ function set_check() {
   setCookie(
     "eye-checkbox",
     document.getElementById("eye-checkbox").checked ? eye() : 0,
-    100
+    30
   );
 }
 
@@ -895,4 +906,24 @@ function eye(params) {
   }
 
   return "eye";
+}
+
+const cookieAcceptBtn = document.querySelector("#accept-btn");
+const cookieWrapper = document.querySelector(".cookie-wrapper");
+
+if(cookieWrapper!= null){
+window.addEventListener("DOMContentLoaded", () => {
+  if (getCookie("Cookie Policy")) {
+    cookieWrapper.style.display = "none";
+  } else {
+    cookieWrapper.style.display = "block";
+  }
+});
+}
+
+if(cookieAcceptBtn != null){
+cookieAcceptBtn.addEventListener("click", () => {
+  cookieWrapper.style.display = "none";
+  setCookie("Cookie Policy", true, 300);
+});
 }

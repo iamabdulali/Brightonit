@@ -1,0 +1,51 @@
+<!--
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the HTML page
+The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
+The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+The <h1> element defines a large heading
+The <p> element defines a paragraph
+The <a> tag defines a hyperlink, which is used to link from one page to another.  
+The <span> tag is much like the <div> element, but <div> is a block-level element (full width) and <span> is an inline element (takes width which is required).    
+
+-->
+
+<!-- by using a <link> element to link to an external CSS file -->
+
+
+<!-- The HTML id attribute is used to specify a unique id for an HTML element.
+
+You cannot have more than one element with the same id in an HTML document. -->
+
+<!-- The HTML class attribute is used to specify a class for an HTML element.
+
+Multiple HTML elements can share the same class. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ensures the character encoding -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this makes sure that the webpage is supported on all devices -->
+    <title>Contact Us Page</title>
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Our Css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <a style="margin: 1em;" href="./home.html" title="Go to Home Page" class="home-btn callback-btn">Home</a>
+    <div class="work-in-progress-div">
+        <h1>Work in progress please wait...</h1>
+        <div class="loader"></div>
+    </div>
+</body>
+
+</html>
