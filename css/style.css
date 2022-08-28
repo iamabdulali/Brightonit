@@ -768,13 +768,7 @@ input:checked + .slider:before {
 }
 
 .work-in-progress-div {
-  background-image: url('https://iamabdulali.github.io/brightonit/assets/forestbridge.jpg');
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Rubik";
+  height: 85vh;
   font-size: 1.3rem;
   display: flex;
   flex-direction: column;
