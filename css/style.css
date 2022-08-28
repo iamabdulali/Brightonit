@@ -768,7 +768,7 @@ input:checked + .slider:before {
 }
 
 .work-in-progress-div {
-  background-image: url('/assets/forestbridge.jpg');
+  background-image: url('assets/forestbridge.jpg');
   height: 100vh;
   background-position: center;
   background-size: cover;
