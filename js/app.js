@@ -414,6 +414,7 @@ if (openCartBtn && closeCartBtn && overlayDiv && emptyCartBtn != null) {
 
   // Delete Every Item from the cart
   emptyCartBtn.addEventListener("click", () => {
+    emptyCartBtn.textContent = "Ok"
     paynowBtn.style.display = 'none'
     document.querySelectorAll(".cart-item-div").forEach((cartItem) => {
       cartItem.style.display = "none";
@@ -442,6 +443,7 @@ function getRandomNumberBetween(min, max) {
 function addItem(selector, eventType) {
   selector.addEventListener(eventType, (event) => {
     paynowBtn.style.display = 'inline-block'
+    emptyCartBtn.textContent = "Empty Cart"
     emptyCart.style.display = "none";
     itemName = event.target.previousElementSibling.innerText;
     imgSrc = event.target.previousElementSibling.previousElementSibling.src;
