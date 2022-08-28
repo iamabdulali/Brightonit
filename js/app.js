@@ -490,7 +490,7 @@ function gettingElements(params) {
   setTimeout(() => {
     trendingImgDivHide = document.querySelectorAll(".hide");
     if (trendingImgDiv.length === trendingImgDivHide.length) {
-      window.location.href = "/brightonit/search-algorithm.html"
+      window.location.href = "search-algorithm.html"
     }
     // else{
     //   itemNotFound.style.display = 'none'
