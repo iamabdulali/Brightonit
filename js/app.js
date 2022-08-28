@@ -518,9 +518,11 @@ function gettingElements(params) {
 // Search Functionality
 
 if (searchBar != null) {
-  searchBar.addEventListener("input", (e) => {
+  searchBar.addEventListener("keypress", (e) => {
     const searchValue = e.target.value.toUpperCase();
-    gettingElements(searchValue);
+    if(e.key == "Enter"){
+      gettingElements(searchValue);
+    }
   });
 }
 // Virtual Assistant
